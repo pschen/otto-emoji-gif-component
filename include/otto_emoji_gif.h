@@ -4,7 +4,7 @@
  *
  * 这个头文件声明了Otto机器人的6个GIF表情资源，用于在LVGL显示屏上显示动态表情。
  *
- * @version 1.0.1
+ * @version 1.0.2
  * @date 2024
  *
  * 支持的表情：
@@ -37,22 +37,22 @@ extern "C" {
  */
 
 // 静态状态/中性表情 - 默认表情，表示平静状态
-LV_IMG_DECLARE(staticstate);
+LV_IMAGE_DECLARE(staticstate);
 
 // 悲伤表情 - 表示难过、沮丧等负面情绪
-LV_IMG_DECLARE(sad);
+LV_IMAGE_DECLARE(sad);
 
 // 开心表情 - 表示高兴、愉快等正面情绪
-LV_IMG_DECLARE(happy);
+LV_IMAGE_DECLARE(happy);
 
 // 惊吓/惊讶表情 - 表示震惊、意外等情绪
-LV_IMG_DECLARE(scare);
+LV_IMAGE_DECLARE(scare);
 
 // 不学/困惑表情 - 表示疑惑、不理解等状态
-LV_IMG_DECLARE(buxue);
+LV_IMAGE_DECLARE(buxue);
 
 // 愤怒表情 - 表示生气、愤怒等强烈情绪
-LV_IMG_DECLARE(anger);
+LV_IMAGE_DECLARE(anger);
 
 /**
  * @brief 获取组件版本
@@ -71,7 +71,7 @@ int otto_emoji_gif_get_count(void);
  * @param name 表情名称
  * @return 表情资源指针，如果未找到则返回NULL
  */
-const lv_img_dsc_t* otto_emoji_gif_get_by_name(const char* name);
+const lv_image_dsc_t* otto_emoji_gif_get_by_name(const char* name);
 
 #ifdef __cplusplus
 }

@@ -8,19 +8,18 @@
 #include "otto_emoji_gif.h"
 
 // 表情映射表
-typedef struct
-{
-    const char *name;
-    const lv_img_dsc_t *gif;
+typedef struct {
+    const char* name;
+    const lv_image_dsc_t* gif;
 } emotion_map_t;
 
 // 外部声明的GIF资源
-extern const lv_img_dsc_t staticstate;
-extern const lv_img_dsc_t sad;
-extern const lv_img_dsc_t happy;
-extern const lv_img_dsc_t scare;
-extern const lv_img_dsc_t buxue;
-extern const lv_img_dsc_t anger;
+extern const lv_image_dsc_t staticstate;
+extern const lv_image_dsc_t sad;
+extern const lv_image_dsc_t happy;
+extern const lv_image_dsc_t scare;
+extern const lv_image_dsc_t buxue;
+extern const lv_image_dsc_t anger;
 
 // 表情映射表
 static const emotion_map_t emotion_maps[] = {
@@ -30,33 +29,27 @@ static const emotion_map_t emotion_maps[] = {
     {"scare", &scare},
     {"buxue", &buxue},
     {"anger", &anger},
-    {NULL, NULL} // 结束标记
+    {NULL, NULL}  // 结束标记
 };
 
-const char *otto_emoji_gif_get_version(void)
-{
-    return "1.0.1";
+const char* otto_emoji_gif_get_version(void) {
+    return "1.0.2";
 }
 
-int otto_emoji_gif_get_count(void)
-{
+int otto_emoji_gif_get_count(void) {
     return 6;
 }
 
-const lv_img_dsc_t *otto_emoji_gif_get_by_name(const char *name)
-{
-    if (name == NULL)
-    {
+const lv_image_dsc_t* otto_emoji_gif_get_by_name(const char* name) {
+    if (name == NULL) {
         return NULL;
     }
 
-    for (int i = 0; emotion_maps[i].name != NULL; i++)
-    {
-        if (strcmp(emotion_maps[i].name, name) == 0)
-        {
+    for (int i = 0; emotion_maps[i].name != NULL; i++) {
+        if (strcmp(emotion_maps[i].name, name) == 0) {
             return emotion_maps[i].gif;
         }
     }
 
-    return NULL; // 未找到
+    return NULL;  // 未找到
 }
