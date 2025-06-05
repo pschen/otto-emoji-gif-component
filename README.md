@@ -1,21 +1,21 @@
-# Otto机器人GIF表情组件
+# Otto 机器人 GIF 表情组件
 
 Otto Robot Emoji GIF Component for ESP-IDF
 
 ## 概述
 
-这是一个ESP-IDF组件，包含了Otto机器人的6个GIF表情资源，专为LVGL显示系统设计。组件提供了完整的GIF动画资源，可以在支持LVGL的ESP32设备上显示动态表情。
+这是一个 ESP-IDF 组件，包含了 Otto 机器人的 6 个 GIF 表情资源，专为 LVGL 显示系统设计。组件提供了完整的 GIF 动画资源，可以在支持 LVGL 的 ESP32 设备上显示动态表情。
 
 ## 支持的表情
 
-| 表情名称 | 描述 | 用途 |
-|---------|------|------|
-| `staticstate` | 静态状态/中性表情 | 默认表情，表示平静状态 |
-| `sad` | 悲伤表情 | 表示难过、沮丧等负面情绪 |
-| `happy` | 开心表情 | 表示高兴、愉快等正面情绪 |
-| `scare` | 惊吓/惊讶表情 | 表示震惊、意外等情绪 |
-| `buxue` | 不学/困惑表情 | 表示疑惑、不理解等状态 |
-| `anger` | 愤怒表情 | 表示生气、愤怒等强烈情绪 |
+| 表情名称      | 描述              | 用途                     |
+| ------------- | ----------------- | ------------------------ |
+| `staticstate` | 静态状态/中性表情 | 默认表情，表示平静状态   |
+| `sad`         | 悲伤表情          | 表示难过、沮丧等负面情绪 |
+| `happy`       | 开心表情          | 表示高兴、愉快等正面情绪 |
+| `scare`       | 惊吓/惊讶表情     | 表示震惊、意外等情绪     |
+| `buxue`       | 不学/困惑表情     | 表示疑惑、不理解等状态   |
+| `anger`       | 愤怒表情          | 表示生气、愤怒等强烈情绪 |
 
 ## 系统要求
 
@@ -25,19 +25,19 @@ Otto Robot Emoji GIF Component for ESP-IDF
 
 ## 安装方法
 
-### 方法1：使用ESP-IDF组件管理器（推荐）
+### 方法 1：使用 ESP-IDF 组件管理器（推荐）
 
 在您的项目的 `idf_component.yml` 文件中添加：
 
 ```yaml
 dependencies:
   otto_emoji_gif:
-    version: "^1.0.0"
+    version: "^1.0.1"
     # 或者使用本地路径
     # path: "../path/to/otto-emoji-gif-component"
 ```
 
-### 方法2：手动安装
+### 方法 2：手动安装
 
 1. 将此组件复制到您的项目的 `components/` 目录中
 2. 或者将其添加为 Git 子模块
@@ -52,10 +52,10 @@ dependencies:
 void display_emotion(lv_obj_t* parent) {
     // 创建GIF对象
     lv_obj_t* gif = lv_gif_create(parent);
-    
+
     // 设置表情
     lv_gif_set_src(gif, &happy);  // 显示开心表情
-    
+
     // 设置位置和大小
     lv_obj_set_size(gif, 240, 240);
     lv_obj_center(gif);
@@ -118,14 +118,10 @@ otto-emoji-gif-component/
 
 ## 技术细节
 
-- 所有GIF资源都经过优化，适合在嵌入式设备上使用
-- 使用LVGL的GIF库进行渲染
+- 所有 GIF 资源都经过优化，适合在嵌入式设备上使用
+- 使用 LVGL 的 GIF 库进行渲染
 - 支持透明背景
 - 文件大小经过优化，平衡了画质和存储空间
-
-## 示例项目
-
-更多使用示例请参考 `examples/` 目录中的示例项目。
 
 ## 许可证
 
@@ -137,11 +133,17 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 ## 更新日志
 
+### v1.0.1 (2025)
+
+- 删除示例项目，简化组件结构
+- 优化组件发布配置
+
 ### v1.0.0 (2025)
+
 - 初始版本发布
-- 包含6个基础表情GIF
-- 支持ESP-IDF 5.4.0+和LVGL 9.0+
+- 包含 6 个基础表情 GIF
+- 支持 ESP-IDF 5.4.0+和 LVGL 9.0+
 
 ## 联系方式
 
-如有问题请提交Issue或联系维护者。 
+如有问题请提交 Issue 或联系维护者。
