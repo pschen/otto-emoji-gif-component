@@ -4,7 +4,7 @@ dependencies:
 
   ## Required IDF version
   idf:
-    version: ">=5.4.0"
+    version: ">=5.3.0"
 
 version: "1.0.2"
 description: "Otto机器人GIF表情资源包 - 包含6个动态表情GIF"
